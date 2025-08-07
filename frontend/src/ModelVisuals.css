@@ -1,0 +1,240 @@
+.visuals-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: white;
+}
+
+.visuals-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 20px;
+}
+
+.visuals-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.visuals-header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.chart-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #2d3748;
+}
+
+.chart-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.chart-card.wide {
+  grid-column: 1 / -1;
+}
+
+.chart-wrapper {
+  height: 300px;
+  position: relative;
+}
+
+.chart-card.wide .chart-wrapper {
+  height: 250px;
+}
+
+.no-data {
+  text-align: center;
+  padding: 80px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.no-data h3 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  opacity: 0.9;
+}
+
+.no-data p {
+  font-size: 1.1rem;
+  opacity: 0.7;
+  margin: 0;
+}
+
+/* Insights Section */
+.insights-section {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.insights-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.insight-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 20px;
+  color: #2d3748;
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.insight-card:hover {
+  transform: translateY(-3px);
+}
+
+.insight-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.insight-content h4 {
+  font-size: 1.1rem;
+  margin: 0 0 10px 0;
+  color: #2d3748;
+  font-weight: 600;
+}
+
+.insight-content p {
+  margin: 0;
+  line-height: 1.5;
+  color: #4a5568;
+  font-size: 0.95rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .visuals-container {
+    padding: 15px;
+  }
+
+  .visuals-header h2 {
+    font-size: 2rem;
+  }
+
+  .visuals-header p {
+    font-size: 1rem;
+  }
+
+  .charts-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .chart-wrapper {
+    height: 250px;
+  }
+
+  .chart-card.wide .chart-wrapper {
+    height: 200px;
+  }
+
+  .insights-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .insight-card {
+    padding: 15px;
+  }
+
+  .insight-icon {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .visuals-container {
+    padding: 10px;
+  }
+
+  .chart-card {
+    padding: 20px;
+  }
+
+  .chart-wrapper {
+    height: 200px;
+  }
+
+  .visuals-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .insight-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .insight-icon {
+    margin-top: 0;
+  }
+}
+
+/* Animation for loading */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chart-card {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.chart-card:nth-child(1) { animation-delay: 0.1s; }
+.chart-card:nth-child(2) { animation-delay: 0.2s; }
+.chart-card:nth-child(3) { animation-delay: 0.3s; }
+.chart-card:nth-child(4) { animation-delay: 0.4s; }
+.chart-card:nth-child(5) { animation-delay: 0.5s; }
+
+.insight-card {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.insight-card:nth-child(1) { animation-delay: 0.6s; }
+.insight-card:nth-child(2) { animation-delay: 0.7s; }
+.insight-card:nth-child(3) { animation-delay: 0.8s; }
+.insight-card:nth-child(4) { animation-delay: 0.9s; }
